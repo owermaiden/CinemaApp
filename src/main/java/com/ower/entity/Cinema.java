@@ -1,14 +1,9 @@
 package com.ower.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Entity;
 
-public class Cinema {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Entity
+public class Cinema extends BaseEntity{
 
     private String cinemaName;
     private String sponsorName;

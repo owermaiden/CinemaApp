@@ -14,11 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Genre {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Genre extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private GENRES name;
