@@ -1,12 +1,13 @@
 package com.ower.entity;
 
-import com.ower.enums.GENRES;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,14 +17,13 @@ import java.util.Set;
 @Setter
 public class Genre extends BaseEntity {
 
-    @Enumerated(EnumType.STRING)
-    private GENRES name;
+    private String name;
 
-    @ManyToMany(mappedBy = "genres", fetch = FetchType.LAZY)
-    private Set<Movie> movies = new HashSet<>();
+    @ManyToMany(mappedBy = "genreList", fetch = FetchType.LAZY)  // genreList name comes from Movie Class..List<Genre> genreList...
+    private List<Movie> movies = new ArrayList<>();
 
 
-    public Genre(GENRES name) {
+    public Genre(String name) {
         this.name = name;
     }
 }
