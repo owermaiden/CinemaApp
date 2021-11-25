@@ -19,8 +19,8 @@ public class Genre extends BaseEntity {
 
     private String name;
 
-    @ManyToMany(mappedBy = "genreList", fetch = FetchType.LAZY)  // genreList name comes from Movie Class..List<Genre> genreList...
-    private List<Movie> movies = new ArrayList<>();
+    @ManyToMany(mappedBy = "genreList")  // genreList name comes from Movie Class..List<Genre> genreList...
+    private List<Movie> movieList = new ArrayList<>();
 
 
     public Genre(String name) {

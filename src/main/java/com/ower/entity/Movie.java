@@ -41,7 +41,7 @@ public class Movie extends BaseEntity {
 
     // Adding @OnetoMany is not a best practice... We have to drop the table with mappedBy.. anyway.. So there is no need...
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)   // fetch ype is default LAZY in many to many
+    @ManyToMany(fetch = FetchType.LAZY)   // fetch ype is default LAZY in many to many
     @JoinTable(name = "movie_genre_rel",
         joinColumns = @JoinColumn(name = "movie_id"),
         inverseJoinColumns = @JoinColumn(name = "genre_id"))
@@ -57,4 +57,12 @@ public class Movie extends BaseEntity {
         this.price = price;
     }
 
+    public Movie(String name, LocalDate releaseDate, Integer duration, MovieType type, MovieState state, BigDecimal price) {
+        this.name = name;
+        this.releaseDate = releaseDate;
+        this.duration = duration;
+        this.type = type;
+        this.state = state;
+        this.price = price;
+    }
 }
