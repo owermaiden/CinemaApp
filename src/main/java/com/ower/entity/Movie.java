@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "movies")
+@Table(name = "movie")
 @NoArgsConstructor
 @Getter
 @Setter
@@ -56,4 +56,5 @@ public class Movie extends BaseEntity {
         this.state = state;
         this.price = price;
     }
+
 }
