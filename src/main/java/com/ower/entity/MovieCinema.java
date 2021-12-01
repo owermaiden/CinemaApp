@@ -29,4 +29,12 @@ public class MovieCinema extends BaseEntity{
     public MovieCinema(LocalDateTime dateTime) {
         this.dateTime = dateTime;
     }
+
+    // If you have mapping manytomany or something ...Dont use @ToString just do it as it is below...
+    @Override
+    public String toString() {
+        return "MovieCinema{" +
+                "dateTime=" + dateTime +
+                '}';
+    }
 }
